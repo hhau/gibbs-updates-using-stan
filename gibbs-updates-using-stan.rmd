@@ -1,0 +1,50 @@
+---
+title: "Can we use Stan for Gibbs updates?"
+author: "Andrew Manderson"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+fontfamily: tgpagella
+fontsize: 10pt
+papersize: a4
+geometry: margin=2.25cm
+bibliography: ../0bibliography/year-1-bib.bib
+csl: aam71-test.csl
+output: 
+  pdf_document:
+    includes:
+      in_header:
+        tex-input/pre.tex
+    fig_caption: true
+    number_sections: true
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "60%", fig.align = "center", auto_pdf = TRUE)
+```
+
+# Introduction
+
+Some Introductory text
+
+# Main Body
+
+A Number of interesting things
+
+# Conclusion
+
+Concise summary
+
+<!-- -------------------- END OF MAIN BODY OF DOCUMENT -------------------- -->
+\newpage
+
+<!-- The {-} tag here suppresses the section numbering. -->
+# Bibliography {-}
+
+<!-- This makes pandoc-citeproc put the references before the end of document. -->
+<div id="refs"></div>
+
+\newpage
+
+<!-- Now switch to alphabetical numbering for the appendix, and reset the counter. -->
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
+
+# Appendix 

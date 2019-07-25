@@ -1,0 +1,14 @@
+# complied objects
+*.so
+*.o
+*.dll
+#*.hpp
+#*.cpp
+
+# R outputs that one does not normally want to VC
+*.rds
+*.pdf
+*.png
+
+# the package directory - sometimes useful sometimes not
+#package/
