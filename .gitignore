@@ -12,3 +12,6 @@
 
 # the package directory - sometimes useful sometimes not
 #package/
+
+gibbs-updates-using-stan.tex
+*.log

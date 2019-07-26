@@ -32,27 +32,28 @@ alpha_tbl_joint <- tibble(
   x = rep(1 : n_samples_to_trace, times = ncol(joint_samples$alpha)),
   y = as.vector(joint_samples$alpha[1 : n_samples_to_trace, ]),
   par = rep(1 : 3, each = n_samples_to_trace),
-  target = "joint"
+  target = "Joint"
 )
 
 alpha_tbl_gibbs <- tibble(
   x = rep(1 : n_samples_to_trace, times = ncol(gibbs_samples$alpha)),
   y = as.vector(gibbs_samples$alpha[1 : n_samples_to_trace, ]),
   par = rep(1 : 3, each = n_samples_to_trace),
-  target = "gibbs"
+  target = "Gibbs"
 )
 
 plot_tbl <- dplyr::bind_rows(alpha_tbl_joint, alpha_tbl_gibbs)
 
 p2 <- ggplot(plot_tbl, aes(x = x, y = y, col = target)) +
-  geom_line() +
+  geom_line(alpha = 0.9) +
   facet_wrap(vars(par), scales = "free_y") +
   scale_colour_manual(
     values = c(
-      joint = greens[4],
-      gibbs = as.character(blues[2])
+      Joint = greens[4],
+      Gibbs = as.character(blues[2])
     )
-  )
+  ) +
+  labs(col = "Update type")
 
 ggsave_halfheight(
   filename = "plots/alpha-trace.pdf",
